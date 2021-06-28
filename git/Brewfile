@@ -1,0 +1,9 @@
+brew 'git'
+brew 'git-lfs'
+brew 'fzf'
+
+brew 'gh'
+cask 'github'
+
+tap 'nvie/tap'
+brew 'nvie/tap/git-toolbelt'

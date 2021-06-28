@@ -1,0 +1,3 @@
+brew 'awscli'
+brew 'cfn-lint'
+cask 'nosql-workbench'

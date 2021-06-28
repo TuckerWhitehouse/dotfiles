@@ -1,0 +1,4 @@
+brew 'watchman'
+
+cask 'android-studio'
+cask 'react-native-debugger'

@@ -1,0 +1,74 @@
+# Local/private config goes in the include
+[include]
+        path = ~/.gitconfig.local
+[hub]
+        protocol = https
+[alias]
+        co          = checkout
+        com         = checkout master
+        pick        = cherry-pick
+        sneak       = commit --amend --no-edit
+        promote     = !$ZSH/bin/git-promote
+        sweep       = !$ZSH/bin/git-delete-local-merged
+        wtf         = !$ZSH/bin/git-wtf
+        count       = !git shortlog -sn
+        origin-head = !$ZSH/bin/git-origin-head
+        refresh     = !$ZSH/bin/git-refresh
+        # https://stackoverflow.com/a/70205254
+        continue    = "-c core.editor=true rebase --continue"
+[color]
+        diff = auto
+        status = auto
+        branch = auto
+        ui = true
+[core]
+        excludesfile = ~/.gitignore
+        editor = code --wait
+[apply]
+        whitespace = nowarn
+[mergetool]
+        keepBackup = false
+[diff]
+        tool = default-difftool
+[difftool]
+        prompt = false
+[difftool "default-difftool"]
+        cmd = code --wait --diff $LOCAL $REMOTE
+[help]
+        # Automatically correct and execute mistyped commands
+        autocorrect = 1
+[init]
+        defaultBranch = main
+[push]
+        # See `git help config` (search for push.default)
+        # for more information on different options of the below setting.
+        #
+        # Setting to git 2.0 default to suppress warning message
+        default = simple
+[pull]
+        ff = only
+[credential]
+        helper = osxkeychain
+
+# URL shorthands
+[url "https://github.com/"]
+        insteadOf = "gh:"
+        pushInsteadOf = "github:"
+        pushInsteadOf = "git://github.com/"
+        pushInsteadOf = "ssh://git@github.com/"
+[url "https://gist.github.com/"]
+        insteadOf = "gst:"
+        pushInsteadOf = "gist:"
+        pushInsteadOf = "git://gist.github.com/"
+        pushInsteadOf = "ssh://git@gist.github.com/"
+[url "https://"]
+        insteadOf = ssh://
+[url "https://"]
+        insteadOf = git://
+
+# https://git-lfs.github.com/
+[filter "lfs"]
+        clean = git-lfs clean -- %f
+        smudge = git-lfs smudge -- %f
+        process = git-lfs filter-process
+        required = true

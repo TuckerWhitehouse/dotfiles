@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# Checkout the origin-head, pull, and sweep
+
+git checkout $(git origin-head) && git pull && git sweep

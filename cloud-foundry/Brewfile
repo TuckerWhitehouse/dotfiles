@@ -1,0 +1,2 @@
+tap 'cloudfoundry/tap'
+brew 'cf-cli'

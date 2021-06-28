@@ -1,0 +1,2 @@
+# https://docs.brew.sh/Homebrew-and-Python
+# Homebrew installs `python` and `python@2` aliased as `python3` and `python` respectively.

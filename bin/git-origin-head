@@ -1,0 +1,9 @@
+#!/bin/sh
+#
+# Return the name of the HEAD branch from the origin remote.
+#
+#   https://stackoverflow.com/a/61357104
+#   https://davidwalsh.name/get-default-branch-name
+
+
+git remote show origin | grep 'HEAD branch' | cut -d' ' -f5

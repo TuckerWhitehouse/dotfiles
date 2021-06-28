@@ -1,0 +1,3 @@
+cask 'temurin' # https://adoptium.net
+# cask 'intellij-idea'
+brew 'maven'
